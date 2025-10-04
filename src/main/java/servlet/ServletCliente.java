@@ -75,7 +75,8 @@ public class ServletCliente extends HttpServlet {
 				System.out.println("email: "+correo_electronico);
 				System.out.println("telefono: "+telefono);
 			
-			//Creamos una instancia de Cliente y le seteamos los valores que obtenemos del formulario
+			
+		    //Creamos una instancia de Cliente y le seteamos los valores que obtenemos del formulario
 			Cliente cliente = new Cliente();
 			cliente.setDni(dni);
 			cliente.setCuil(cuil);
