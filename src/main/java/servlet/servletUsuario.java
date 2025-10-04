@@ -43,6 +43,7 @@ public class servletUsuario extends HttpServlet {
 			request.getRequestDispatcher("/Inicio.jsp").forward(request, response);
 			
 		}
+		
 	}
 
 }

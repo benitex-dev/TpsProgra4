@@ -15,6 +15,7 @@ public class DaoUsuario {
 	private String dbName = "sistema_clientes";
 	
 	
+	
 	public Usuario obtenerUsuario(String nombreUsuario, String contrasena) {
 		
 		Usuario usuario = null;
