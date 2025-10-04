@@ -6,7 +6,7 @@ public class Cliente {
 	private String dni;
 	private String cuil;
 	private String nombre;
-	private String apelldo;
+	private String apellido;
 	private String sexo;
 	private String fecha_nacimiento;
 	private String direccion;
@@ -24,7 +24,7 @@ public class Cliente {
 		this.dni = dni;
 		this.cuil = cuil;
 		this.nombre = nombre;
-		this.apelldo = apellido;
+		this.apellido = apellido;
 		this.sexo = sexo;
 		this.fecha_nacimiento = fecha_nacimiento;
 		this.direccion = direccion;
@@ -68,11 +68,11 @@ public class Cliente {
 	}
 
 	public String getApelldo() {
-		return apelldo;
+		return apellido;
 	}
 
 	public void setApelldo(String apelldo) {
-		this.apelldo = apelldo;
+		this.apellido = apelldo;
 	}
 
 	public String getSexo() {
@@ -142,7 +142,7 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "Cliente [id_cliente=" + id_cliente + ", dni=" + dni + ", cuil=" + cuil + ", nombre=" + nombre
-				+ ", apelldo=" + apelldo + ", sexo=" + sexo + ", fecha_nacimiento=" + fecha_nacimiento + ", direccion="
+				+ ", apelldo=" + apellido + ", sexo=" + sexo + ", fecha_nacimiento=" + fecha_nacimiento + ", direccion="
 				+ direccion + ", nacionalidad=" + nacionalidad + ", localidad=" + localidad + ", provincia=" + provincia
 				+ ", correo_electronico=" + correo_electronico + ", telefono=" + telefono + "]";
 	}

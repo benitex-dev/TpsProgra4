@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+
 import entidades.Cliente;
 import interfaces.IDaoCliente;
 
@@ -35,4 +36,33 @@ public class DaoCliente implements IDaoCliente {
 		}
 		return listaCli;
 	}
+
+	@Override
+	public int agregarCliente(Cliente cliente) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+		int filas=0;
+		Connection cn = null;
+		try
+		{
+			cn = DriverManager.getConnection(host+dbName, user,pass);
+			Statement st = cn.createStatement();
+			String query 
+			= "Insert into clientes(dni, cuil, nombre, apellido, sexo, fecha_nacimiento, direccion, nacionalidad, localidad, provincia, correo_electronico, telefono) values ('"+cliente.getDni()+"','"+cliente.getCuil()+"','"+cliente.getNombre()+"','"+cliente.getApelldo()+"','"+cliente.getSexo()+"','"+cliente.getFecha_nacimiento()+"','"+cliente.getDireccion()+"','"+cliente.getNacionalidad()+"','"+cliente.getLocalidad()+"','"+cliente.getProvincia()+"','"+cliente.getCorreo_electronico()+"','"+cliente.getTelefono()+"')";
+			filas=st.executeUpdate(query);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return filas;
+	}
+
+	
 }
