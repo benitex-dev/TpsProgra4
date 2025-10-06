@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="entidades.Usuario" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<%
+    Usuario usuarioLogueado = (Usuario) session.getAttribute("usuario");
+%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="Inicio.jsp"></a>
+    <div class="d-flex align-items-center text-white">
+        <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
+        <% if (usuarioLogueado != null) { %>
+            <span><%= usuarioLogueado.getUsuario() %></span>
+        <% } %>
+        <a href="Logout.jsp" class="btn btn-outline-light btn-sm ms-3">Cerrar sesión</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Importar Bootstrap Icons Ícono de "usuario" -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>

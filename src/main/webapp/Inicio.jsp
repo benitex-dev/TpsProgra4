@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@page import= "entidades.Usuario" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
   
 
 <h1>Pagina de Inicio</h1>
-
+ <%@ include file="Header.jsp" %>
 
 <%
 Usuario usuario = null;

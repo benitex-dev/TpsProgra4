@@ -2,6 +2,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entidades.Cliente" %>
 <%@ page import="servlet.ServletCliente" %>
+<%@ include file="Header.jsp" %>
 
 <!DOCTYPE html>
 <html>

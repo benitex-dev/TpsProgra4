@@ -36,9 +36,9 @@ public class servletUsuario extends HttpServlet {
 			Usuario usuario = new Usuario();
 			usuario =  dao.obtenerUsuario(request.getParameter("txtUsuario"), request.getParameter("txtPass"));
 			
-			//request.getSession().setAttribute("usuario", usuario);
+			request.getSession().setAttribute("usuario", usuario);
 			
-			request.setAttribute("usuario", usuario);
+			//request.setAttribute("usuario", usuario);
 			
 			request.getRequestDispatcher("/Inicio.jsp").forward(request, response);
 			
