@@ -35,7 +35,7 @@
                                 <td><%= clientes.getDni() %></td>
                                 <td><%= clientes.getCuil() %></td>
                                 <td><%= clientes.getNombre() %></td>                      
-                                <td><%= clientes.getApelldo() %></td>                  
+                                <td><%= clientes.getApellido() %></td>                  
                                 <td><%= clientes.getCorreo_electronico() %></td>
                                 <td><%= clientes.getTelefono() %></td>
                                 <td><%= clientes.getLocalidad() %></td>

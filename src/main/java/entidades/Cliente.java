@@ -67,11 +67,11 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
-	public String getApelldo() {
+	public String getApellido() {
 		return apellido;
 	}
 
-	public void setApelldo(String apelldo) {
+	public void setApellido(String apelldo) {
 		this.apellido = apelldo;
 	}
 

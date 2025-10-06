@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 import entidades.Cliente;
 import interfaces.IDaoCliente;
 
@@ -54,7 +53,7 @@ public class DaoCliente implements IDaoCliente {
 			cn = DriverManager.getConnection(host+dbName, user,pass);
 			Statement st = cn.createStatement();
 			String query 
-			= "Insert into clientes(dni, cuil, nombre, apellido, sexo, fecha_nacimiento, direccion, nacionalidad, localidad, provincia, correo_electronico, telefono) values ('"+cliente.getDni()+"','"+cliente.getCuil()+"','"+cliente.getNombre()+"','"+cliente.getApelldo()+"','"+cliente.getSexo()+"','"+cliente.getFecha_nacimiento()+"','"+cliente.getDireccion()+"','"+cliente.getNacionalidad()+"','"+cliente.getLocalidad()+"','"+cliente.getProvincia()+"','"+cliente.getCorreo_electronico()+"','"+cliente.getTelefono()+"')";
+			= "Insert into clientes(dni, cuil, nombre, apellido, sexo, fecha_nacimiento, direccion, nacionalidad, localidad, provincia, correo_electronico, telefono) values ('"+cliente.getDni()+"','"+cliente.getCuil()+"','"+cliente.getNombre()+"','"+cliente.getApellido()+"','"+cliente.getSexo()+"','"+cliente.getFecha_nacimiento()+"','"+cliente.getDireccion()+"','"+cliente.getNacionalidad()+"','"+cliente.getLocalidad()+"','"+cliente.getProvincia()+"','"+cliente.getCorreo_electronico()+"','"+cliente.getTelefono()+"')";
 			filas=st.executeUpdate(query);
 		}
 		catch(Exception e)
@@ -64,5 +63,5 @@ public class DaoCliente implements IDaoCliente {
 		return filas;
 	}
 
-	
+
 }
