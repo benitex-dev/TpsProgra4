@@ -15,6 +15,10 @@
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px;">
       <h2 class="text-center mb-4">Iniciar sesión</h2>
+      <% String err = (String) request.getAttribute("errorLogin"); %>
+  <% if (err != null) { %>
+    <div class="alert alert-danger text-center mt-3"><%= err %></div>
+  <% } %>
       <form method="post" action="servletUsuario">
         <div class="mb-3">
           <label for="usuario" class="form-label">Usuario</label>

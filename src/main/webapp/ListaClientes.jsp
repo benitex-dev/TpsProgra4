@@ -1,3 +1,10 @@
+<%
+    if (session.getAttribute("usuario") == null) {
+        request.setAttribute("errorLogin", "Debes iniciar sesión para acceder al sistema.");
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
+        return;
+    }
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entidades.Cliente" %>

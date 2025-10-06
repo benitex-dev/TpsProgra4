@@ -36,14 +36,18 @@ public class servletUsuario extends HttpServlet {
 			Usuario usuario = new Usuario();
 			usuario =  dao.obtenerUsuario(request.getParameter("txtUsuario"), request.getParameter("txtPass"));
 			
+			if (usuario != null) {
 			request.getSession().setAttribute("usuario", usuario);
-			
 			//request.setAttribute("usuario", usuario);
-			
 			request.getRequestDispatcher("/Inicio.jsp").forward(request, response);
-			
+			}
+			else {
+				request.setAttribute("errorLogin", "Usuario o contraseña Inválidos");
+				request.getRequestDispatcher("/Login.jsp").forward(request, response); 
+			}
+			}
 		}
 		
 	}
 
-}
+
