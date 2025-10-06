@@ -16,7 +16,7 @@
 
     <a class="navbar-brand" href="Inicio.jsp"></a>
 
-    <!-- Menú de navegación alineado a la izquierda -->
+    <!-- Menú -->
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
       <li class="nav-item me-3">
         <a class="nav-link" href="Inicio.jsp">Inicio</a>
@@ -29,7 +29,7 @@
       </li>
     </ul>
 
-    <!-- Usuario y botón cerrar sesión a la derecha -->
+    <!-- Usuario - cerrar sesión -->
     <div class="d-flex align-items-center text-white">
         <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
         <% if (usuarioLogueado != null) { %>
@@ -41,7 +41,7 @@
   </div>
 </nav>
 
-<!-- Bootstrap Icons -->
+<!-- Bootstrap Icons ícono del usuario -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 </body>
 </html>
