@@ -13,7 +13,7 @@
 <body class="bg-light">
   
 
-<h1>Pagina de Inicio</h1>
+<h1>Sistema Clientes</h1>
  <%@ include file="Header.jsp" %>
 
 <%
