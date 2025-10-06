@@ -11,8 +11,7 @@
 </head>
 <body class="">
 <nav class="nav text-black">
-  <a class="nav-link" href="#">Alta de cliente</a>
-  <a class="nav-link" href="#">Listado de Clientes</a>
+  
  
 </nav>
     <div class="container mt-5">
