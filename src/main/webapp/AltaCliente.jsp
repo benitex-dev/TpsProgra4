@@ -27,12 +27,12 @@
     <div class="row mb-3">
         <div class="col-md-6">
           <label for="dni" class="form-label">DNI</label>
-          <input type="text" class="form-control" name="txtDni" placeholder="Ej: 12345678">
+          <input type="text" class="form-control" name="txtDni" placeholder="Ej: 12345678" required>
           <small class="text-muted">Sólo números. 8 dígitos.</small>
         </div>
         <div class="col-md-6">
           <label for="cuil" class="form-label">CUIL</label>
-          <input type="text" class="form-control" name="txtCuil" placeholder="Ej: 20334445551">
+          <input type="text" class="form-control" name="txtCuil" placeholder="Ej: 20334445551" required>
           <small class="text-muted">Formato: 11 dígitos.</small>
         </div>
       </div>
@@ -40,18 +40,18 @@
     <div class="row mb-3">
         <div class="col-md-6">
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" name="txtNombre">
+          <input type="text" class="form-control" name="txtNombre" required>
         </div>
         <div class="col-md-6">
           <label for="apellido" class="form-label">Apellido</label>
-          <input type="text" class="form-control" name="txtApellido">
+          <input type="text" class="form-control" name="txtApellido" required>
         </div>
       </div>
 
      <div class="row mb-3">
         <div class="col-md-6">
           <label for="sexo" class="form-label">Sexo</label>
-          <select class="form-select" name="txtSexo">
+          <select class="form-select" name="txtSexo" required>
             <option selected>Seleccione</option>
             <option value="M">Masculino</option>
             <option value="F">Femenino</option>
@@ -60,37 +60,37 @@
         </div>
         <div class="col-md-6">
           <label for="nacionalidad" class="form-label">Nacionalidad</label>
-          <input type="text" class="form-control" name="txtNacionalidad">
+          <input type="text" class="form-control" name="txtNacionalidad" required>
         </div>
       </div>
     <div class="mb-3">
         <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
-        <input type="text" class="form-control" name="txtFechaNacimiento" placeholder="dd/mm/aaaa">
+        <input type="text" class="form-control" name="txtFechaNacimiento" placeholder="dd/mm/aaaa" required>
       </div>
 
       <div class="mb-3">
         <label for="direccion" class="form-label">Dirección</label>
-        <input type="text" class="form-control" name="txtDireccion">
+        <input type="text" class="form-control" name="txtDireccion" required>
       </div>
 
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="localidad" class="form-label">Localidad</label>
-          <input type="text" class="form-control" name="txtLocalidad">
+          <input type="text" class="form-control" name="txtLocalidad" required>
         </div>
         <div class="col-md-6">
           <label for="provincia" class="form-label">Provincia</label>
-          <input type="text" class="form-control" name="txtProvincia">
+          <input type="text" class="form-control" name="txtProvincia" required>
         </div>
       </div>
     <div class="row mb-3">
         <div class="col-md-6">
           <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" name="txtCorreo" placeholder="Ej: nombre@dominio.com">
+          <input type="email" class="form-control" name="txtCorreo" placeholder="Ej: nombre@dominio.com" required>
         </div>
         <div class="col-md-6">
           <label for="telefono" class="form-label">Teléfono</label>
-          <input type="text" class="form-control" name="txtTelefono">
+          <input type="text" class="form-control" name="txtTelefono" required>
         </div>
       </div>
 
