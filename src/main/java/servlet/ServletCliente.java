@@ -127,7 +127,7 @@ public class ServletCliente extends HttpServlet {
 		            request.setAttribute("telefono", telefono);
 
 		            request.setAttribute("errores", errores);
-		            request.getRequestDispatcher("/AltaClientes.jsp").forward(request, response);
+		            request.getRequestDispatcher("/AltaCliente.jsp").forward(request, response);
 		            return;
 				}
 			
@@ -163,7 +163,7 @@ public class ServletCliente extends HttpServlet {
 	                System.out.println("[ServletCliente] Volviendo a AltaClientes.jsp por errores de formato");
 
 	                request.setAttribute("errores", errores);
-	                request.getRequestDispatcher("/AltaClientes.jsp").forward(request, response);
+	                request.getRequestDispatcher("/AltaCliente.jsp").forward(request, response);
 	                return;
 	            }
 		    
