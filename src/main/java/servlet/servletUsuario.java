@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DaoUsuario;
 import entidades.Usuario;
+import interfaces.IDaoUsuario;
 
 
 @WebServlet("/servletUsuario")

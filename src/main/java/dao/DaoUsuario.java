@@ -1,13 +1,14 @@
 package dao;
 
 import entidades.Usuario;
+import interfaces.IDaoUsuario;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DaoUsuario {
+public class DaoUsuario implements IDaoUsuario {
 	
 	private String host = "jdbc:mysql://localhost:3306/";
 	private String user = "root";
@@ -23,7 +24,7 @@ public class DaoUsuario {
 		
 		try
 		{
-			 Class.forName("com.mysql.jdbc.Driver"); 
+			Class.forName("com.mysql.jdbc.Driver"); 
 			String query = "SELECT id_usuario, usuario, contrasena FROM usuarios WHERE usuario = ? AND contrasena = ?";
 			
 			cn = DriverManager.getConnection(host+dbName, user, pass);

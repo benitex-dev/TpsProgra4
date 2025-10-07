@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DaoCliente;
 import entidades.Cliente;
+import interfaces.IDaoCliente;
 
 
 /**
@@ -33,9 +35,9 @@ public class ServletCliente extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      	 DaoCliente dao = new DaoCliente();
-      	 ArrayList<Cliente> listaClientes = dao.listar();	    	   
-      	 request.setAttribute("listaClientes", listaClientes);
+    	IDaoCliente dao = new DaoCliente();
+      	ArrayList<Cliente> listaClientes = dao.listar();	    	   
+      	request.setAttribute("listaClientes", listaClientes);
       	RequestDispatcher rd = request.getRequestDispatcher("/ListaClientes.jsp");
       	rd.forward(request, response);    
           }
@@ -180,7 +182,7 @@ public class ServletCliente extends HttpServlet {
 			cliente.setCorreo_electronico(correo_electronico);
 			cliente.setTelefono(telefono);
 			 
-			DaoCliente daoCliente = new DaoCliente();
+			IDaoCliente daoCliente = new DaoCliente();
 			filas=daoCliente.agregarCliente(cliente);
 			
 			request.setAttribute("cantFilas", filas);
