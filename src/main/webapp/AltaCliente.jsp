@@ -8,6 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="Header.jsp" %>
+    <%@ page import= "java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,11 @@
   
  
 </nav>
+
+
+
+
+
     <div class="container mt-5">
     <h2>Formulario de Cliente</h2>
     <form action="ServletCliente"  method="post">
@@ -29,6 +35,11 @@
           <label for="dni" class="form-label">DNI</label>
           <input type="text" class="form-control" name="txtDni" placeholder="Ej: 12345678" required>
           <small class="text-muted">Sólo números. 8 dígitos.</small>
+          <% if (request.getAttribute("errorDni") != null) { %>
+   			 <label class="alert alert-danger"><%= request.getAttribute("errorDni") %></label>
+			<% } %>
+          
+          <label>  </label>
         </div>
         <div class="col-md-6">
           <label for="cuil" class="form-label">CUIL</label>
@@ -93,6 +104,25 @@
           <input type="text" class="form-control" name="txtTelefono" required>
         </div>
       </div>
+      
+      
+      	<%
+		ArrayList<String> errores = null;
+		if(request.getAttribute("errores") != null){
+			errores = (ArrayList<String>)request.getAttribute("errores");
+		}
+		
+		if(errores != null){
+		for(String error : errores){
+			%>
+			<label class="alert alert-danger"> <%= error%> </label> <br>
+			
+			<%
+		}
+		}
+		
+	
+	%>
 
       <div class="text-center">
         <button type="submit" class="btn btn-primary float-end mb-5" name="btnAgregar">Guardar Cliente</button>

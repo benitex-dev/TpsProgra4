@@ -16,24 +16,17 @@ import entidades.Cliente;
 import interfaces.IDaoCliente;
 
 
-/**
- * Servlet implementation class ServletCliente
- */
 @WebServlet("/ServletCliente")
 public class ServletCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public ServletCliente() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	IDaoCliente dao = new DaoCliente();
       	ArrayList<Cliente> listaClientes = dao.listar();	    	   
@@ -42,9 +35,6 @@ public class ServletCliente extends HttpServlet {
       	rd.forward(request, response);    
           }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          
 		int filas=0;
@@ -85,7 +75,7 @@ public class ServletCliente extends HttpServlet {
 				System.out.println("telefono: "+telefono);
 			
 				//CAMPOS VACIOS
-				if (dni == null || dni.trim().isEmpty())
+				if (dni == null || dni.trim().isEmpty()) 
 				    errores.add("El DNI es obligatorio.");
 				if (cuil == null || cuil.trim().isEmpty())
 				    errores.add("El CUIL es obligatorio.");
@@ -110,7 +100,7 @@ public class ServletCliente extends HttpServlet {
 				if (telefono == null || telefono.trim().isEmpty())
 				    errores.add("El teléfono es obligatorio.");
 				
-				if (!errores.isEmpty()) {
+		/*		if (!errores.isEmpty()) {
 				    errores.add("Debe ingresar todos los campos para poder continuar.");
 				    
 				    request.setAttribute("dni", dni);
@@ -129,7 +119,7 @@ public class ServletCliente extends HttpServlet {
 		            request.setAttribute("errores", errores);
 		            request.getRequestDispatcher("/AltaCliente.jsp").forward(request, response);
 		            return;
-				}
+				} */
 			
 				//VALIDACIONES
 				if (dni == null || !dni.matches("\\d{6,8}"))
@@ -140,7 +130,7 @@ public class ServletCliente extends HttpServlet {
 	                errores.add("Nombre solo puede tener letras.");
 	            if (apellido == null || !apellido.matches("[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"))
 	                errores.add("Apellido solo puede tener letras.");
-	            if (sexo == null || !(sexo.equals("M") || sexo.equals("F") || sexo.equals("Otro")))
+	            if (sexo == null || !(sexo.equals("M") || sexo.equals("F") || sexo.equals("O")))
 	                errores.add("Sexo inválido.");
 	            
 	            //FALTA FECHA!!
@@ -163,6 +153,19 @@ public class ServletCliente extends HttpServlet {
 	                System.out.println("[ServletCliente] Volviendo a AltaClientes.jsp por errores de formato");
 
 	                request.setAttribute("errores", errores);
+	                request.setAttribute("dni", dni);
+	                request.setAttribute("cuil", cuil);
+	                request.setAttribute("nombre", nombre);
+	                request.setAttribute("apellido", apellido);
+	                request.setAttribute("sexo", sexo);
+	                request.setAttribute("fecha_nacimiento", fecha_nacimiento);
+	                request.setAttribute("direccion", direccion);
+	                request.setAttribute("nacionalidad", nacionalidad);
+	                request.setAttribute("localidad", localidad);
+	                request.setAttribute("provincia", provincia);
+	                request.setAttribute("correo_electronico", correo_electronico);
+	                request.setAttribute("telefono", telefono);
+
 	                request.getRequestDispatcher("/AltaCliente.jsp").forward(request, response);
 	                return;
 	            }
@@ -181,16 +184,34 @@ public class ServletCliente extends HttpServlet {
 			cliente.setProvincia(provincia);
 			cliente.setCorreo_electronico(correo_electronico);
 			cliente.setTelefono(telefono);
-			 
-			IDaoCliente daoCliente = new DaoCliente();
-			filas=daoCliente.agregarCliente(cliente);
 			
-			request.setAttribute("cantFilas", filas);
-			RequestDispatcher rd = request.getRequestDispatcher("/Inicio.jsp");   
-	        rd.forward(request, response);  
-	        return;
+			
+			try {
+				
+				IDaoCliente daoCliente = new DaoCliente();
+				filas=daoCliente.agregarCliente(cliente);
+				request.setAttribute("cantFilas", filas);
+				RequestDispatcher rd = request.getRequestDispatcher("/Inicio.jsp");   
+		        rd.forward(request, response);  
+		        return;
+
+				
+			}
+			catch (Exception e) {
+			    e.printStackTrace();
+			    errores.add("Ocurrió un error: " + e.getMessage());
+			    request.setAttribute("errores", errores);
+			    request.getRequestDispatcher("/AltaCliente.jsp").forward(request, response);
+			    return;
+			}
+			
+			
+			
+			
+			
+			
 		}
-		doGet(request, response);
+	
 	}
 
 }
